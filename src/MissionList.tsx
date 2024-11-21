@@ -6,13 +6,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { FaCheckCircle, FaRegCircle } from "react-icons/fa";
+import { CircleCheckBig, Circle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { missions } from "./values";
 import { useState } from "react";
 
-export default function MissionList({ missionsList = missions }) {
-  const listMissions = missionsList.map((el) => (
+export default function MissionList({ list = missions }) {
+  const listMissions = list.map((el) => (
     <Mission
       name={el.name}
       exp={el.exp}
@@ -22,17 +22,17 @@ export default function MissionList({ missionsList = missions }) {
   ));
 
   // Check if all tasks are complete
-  const doneCount = missionsList.reduce(
+  const doneCount = list.reduce(
     (acc, curr) => acc + Math.floor(curr.currentCount / curr.totalCount),
     0
   );
-  const missionsLeft = missionsList.length - doneCount;
-  const allDone = missionsList.length == doneCount;
+  const missionsLeft = list.length - doneCount;
+  const allDone = list.length == doneCount;
   const isDoneMessage = allDone
     ? "️‍🔥 You're on a roll!"
     : "Complete " + missionsLeft + " more missions to continue your streak!";
   return (
-    <Card>
+    <Card className="rounded-3xl ">
       <CardHeader>
         <CardTitle>Today's Missions</CardTitle>
         <CardDescription>
@@ -54,9 +54,9 @@ function Mission({
   const done = currentCount === totalCount;
   const doneClass = done ? "done" : "";
   const statusIcon = done ? (
-    <FaCheckCircle className="text-yellow-500 " />
+    <CircleCheckBig className="text-yellow-500 " />
   ) : (
-    <FaRegCircle className="text-yellow-500  " />
+    <Circle className="text-yellow-500  " />
   );
 
   return (
