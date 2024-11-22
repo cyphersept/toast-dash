@@ -8,54 +8,48 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
-export default function Component() {
+export default function CreatePost() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-background">
-      <div className="w-full max-w-md px-4 py-6 bg-card rounded-lg shadow-lg">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold text-primary-foreground">
-            Create a New Post
-          </h1>
-          <p className="text-muted-foreground">
-            Share your thoughts with the world.
+    <div className="w-full px-8 py-4 gap-2 bg-card rounded-3xl shadow-lg">
+      <div className="flex mb-2">
+        <div className="text">
+          <Label
+            htmlFor="description"
+            className="text-xl font-semibold text-primary-foreground"
+          >
+            🔥 Share an update
+          </Label>
+          <p className="text-muted-foreground text-sm">
+            Tell everyone what you've been working on!
           </p>
         </div>
-        <form className="space-y-4">
-          <div>
-            <Label htmlFor="title">Title</Label>
-            <Input
-              id="title"
-              type="text"
-              placeholder="Enter a title"
-              className="w-full"
-            />
-          </div>
-          <div>
-            <Label htmlFor="description">Description</Label>
-            <Textarea
-              id="description"
-              placeholder="Write your description here..."
-              className="w-full min-h-[120px]"
-            />
-          </div>
-          <div>
-            <Label>Media</Label>
-            <div className="flex items-center justify-between">
-              <Button variant="outline" size="sm">
-                <ImageIcon className="w-4 h-4 mr-2" />
-                Upload Image
-              </Button>
-              <Button variant="outline" size="sm">
-                <VideoIcon className="w-4 h-4 mr-2" />
-                Upload Video
-              </Button>
-            </div>
-          </div>
-          <div className="flex justify-end">
-            <Button type="submit">Publish</Button>
-          </div>
-        </form>
+        <div className="flex items-center gap-4 ml-auto">
+          <Button variant="outline" size="sm">
+            <ImageIcon className="w-4 h-4 mr-2" />
+            Upload Image
+          </Button>
+          <Button type="submit">Post</Button>
+        </div>
       </div>
+      <form className="">
+        {/* <div>
+          <Label htmlFor="title">Tags</Label>
+          <Input
+            id="title"
+            type="text"
+            placeholder="Enter a title"
+            className="w-full"
+          />
+        </div> */}
+        <div>
+          <Textarea
+            id="description"
+            placeholder="I built this with #shadcn and #react, feeling great!"
+            className="w-full min-h-16"
+          />
+        </div>
+        <div className="flex justify-end"></div>
+      </form>
     </div>
   );
 }

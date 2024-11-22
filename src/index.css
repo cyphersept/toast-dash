@@ -86,4 +86,8 @@
   .button-none {
     @apply bg-transparent p-0;
   }
+
+  #description {
+    @apply text-base;
+  }
 }

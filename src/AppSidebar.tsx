@@ -73,7 +73,7 @@ export default function AppSidebar() {
         <CalendarCheck /> Placeholder App Name
       </CardHeader>
       <CardContent className="p-0">{links}</CardContent>
-      <CardFooter className="flex flex-col items-stretch p-0 pb-4 justify-self-end">
+      <CardFooter className="flex flex-col items-stretch p-0 pb-4 mt-auto">
         {footLinks}
       </CardFooter>
     </Card>
