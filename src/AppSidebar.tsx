@@ -4,7 +4,6 @@ import {
   CircleUserRound,
   LogOut,
   Settings,
-  CalendarCheck,
 } from "lucide-react";
 
 import {
@@ -14,6 +13,8 @@ import {
   CardFooter,
 } from "./components/ui/card";
 import { useState } from "react";
+
+// import Logo from "./Logo";
 
 // Menu items.
 const items = [
@@ -68,9 +69,14 @@ export default function AppSidebar() {
     />
   ));
   return (
-    <Card className="flex flex-col w-96  mt-4 mb-8 rounded-s-none ">
-      <CardHeader className="flex-row gap-4 pl-8 text-lg border-b font-semibold">
-        <CalendarCheck /> Placeholder App Name
+    <Card className="flex flex-col w-96 min-w-72  mt-4 mb-8 rounded-s-none ">
+      <CardHeader className="flex-row gap-4 pl-8 h-auto items-end border-b font-semibold">
+        <img
+          src="../src/assets/Logo.png"
+          alt=""
+          className="w-auto h-8 aspect-square "
+        />
+        <span className="text-2xl  !mt-0">Re:Engage</span>
       </CardHeader>
       <CardContent className="p-0">{links}</CardContent>
       <CardFooter className="flex flex-col items-stretch p-0 pb-4 mt-auto">
