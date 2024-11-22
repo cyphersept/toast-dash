@@ -72,7 +72,7 @@ export default function AppSidebar() {
     <Card className="flex flex-col w-96 min-w-72  mt-4 mb-8 rounded-s-none ">
       <CardHeader className="flex-row gap-4 pl-8 h-auto items-end border-b font-semibold">
         <img
-          src="./assets/Logo.png"
+          src="https://media.discordapp.net/attachments/909164053371433021/1309591050867839138/Logo.png?ex=67422335&is=6740d1b5&hm=4694aaab9aad50ab395024eb71ca152b55fa1e9b4666d9b9a0129140c6fa0735&=&format=webp&quality=lossless"
           alt=""
           className="w-auto h-8 aspect-square "
         />
