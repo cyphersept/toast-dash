@@ -3,10 +3,9 @@ function initEmptyArray() {
   return result;
 }
 export const missions = [
-  { name: "Make a post", exp: 100, currentCount: 0, totalCount: 1 },
+  { name: "Make a post", exp: 100, currentCount: 1, totalCount: 1 },
   { name: "Search for an idea", exp: 20, currentCount: 0, totalCount: 1 },
-  { name: "Encourage 5 posts", exp: 50, currentCount: 0, totalCount: 5 },
-  { name: "Volunteer on a post", exp: 50, currentCount: 0, totalCount: 1 },
+  { name: "Encourage 5 posts", exp: 50, currentCount: 3, totalCount: 5 },
   { name: "Chat with a friend", exp: 500, currentCount: 0, totalCount: 1 },
 ];
 
@@ -57,14 +56,16 @@ export const posts = [
   {
     postId: 0,
     userId: 2,
-    message: "Hello world!",
+    message:
+      "Just spent the whole morning getting our #snapshot-tests working. Go #Jest!",
     cheers: new Set(),
     comments: initEmptyArray(),
   },
   {
     postId: 1,
     userId: 1,
-    message: "Lorem Ipsum",
+    message:
+      "something on #frontend needs to be done, our #sql queries look crazy and I still can't find anything!",
     cheers: new Set(),
     comments: initEmptyArray(),
   },
@@ -72,7 +73,7 @@ export const posts = [
     postId: 2,
     userId: 0,
     message:
-      "Amet veniam reprehenderit officia ipsum officia dolor tempor duis elit consequat incididunt eu.",
+      "We took the feedback we got from #user-tests and incorporated them into our next batch of #beta-features. #uiux",
     cheers: new Set(),
     comments: initEmptyArray(),
   },
@@ -80,7 +81,7 @@ export const posts = [
     postId: 3,
     userId: 3,
     message:
-      "Et culpa minim consequat veniam fugiat exercitation qui sunt irure deserunt laborum aute.",
+      "I'm very proud of the work we've done at #Delivra this year. Our profits were up 12.5% this quarter and I just secured another round of #funding. Here's to another great year.",
     cheers: new Set(),
     comments: initEmptyArray(),
   },
@@ -88,14 +89,15 @@ export const posts = [
     postId: 4,
     userId: 2,
     message:
-      "Laborum nulla voluptate fugiat dolor esse veniam quis laboris id cupidatat amet pariatur Lorem.",
+      "I added another batch of issues to #Jira on the issues we identified with our #E2E #tests. The new UI is not playing nice on older projects. #troubleshooting",
     cheers: new Set(),
     comments: initEmptyArray(),
   },
   {
     postId: 5,
     userId: 4,
-    message: "Est Lorem do velit quis anim eu.",
+    message:
+      "Question for #HR: where can I get some good #coffee around the #Victoria office? This is a critical supply acquisition bottleneck.",
     cheers: new Set(),
     comments: initEmptyArray(),
   },

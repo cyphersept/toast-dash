@@ -1,6 +1,6 @@
 import { flairs } from "./values";
 
-export default function Flair({ group = 0, id = 0 }) {
+export function Flair({ group = 0, id = 0 }) {
   const flairData = flairs[group][id];
   return (
     <div
@@ -12,4 +12,9 @@ export default function Flair({ group = 0, id = 0 }) {
       {flairData.display}
     </div>
   );
+}
+
+export function FlatFlair({ group = 0, id = 0 }) {
+  const flairData = flairs[group][id];
+  return <span>{flairData.display}</span>;
 }

@@ -4,7 +4,7 @@ import { MessageCircleMore } from "lucide-react";
 import { users, posts, Updaters } from "./values";
 import { createContext, useContext } from "react";
 
-import Flair from "./Flair";
+import { Flair, FlatFlair } from "./Flair";
 
 export default function PostList({ list = posts }) {
   const displayList =
@@ -31,12 +31,36 @@ export function Post({
   cheers = new Set(),
   comments,
 }) {
-  const flairList = user.flairs.map((obj) => (
-    <Flair group={obj.group} id={obj.id} />
-  ));
+  const flairList = user.flairs.map((obj, index) =>
+    index == 2 ? (
+      <Flair group={obj.group} id={obj.id} />
+    ) : (
+      <FlatFlair group={obj.group} id={obj.id} />
+    )
+  );
   const cheerThisPost = () => {
     Updaters.cheerPost(postId);
   };
+  const userTitle = (
+    <div className="text-sm text-secondary-foreground">
+      {flairList[1]} @ {flairList[0]}
+    </div>
+  );
+  const regex = /#[-\w]+/g;
+  const tags = message.match(regex) ?? [];
+  const tagDisplay = tags.map((tag, index) =>
+    index === 0 ? (
+      <div className="tag ml-auto">{tag}</div>
+    ) : (
+      <div className="tag">{tag}</div>
+    )
+  );
+  const parsedMessage = message
+    .replace(regex, "<split-here>$&<split-here>")
+    .split("<split-here>")
+    .map((part) =>
+      part.match(regex) ? <span className="highlight-tag">{part}</span> : part
+    );
   return (
     <Card className="p-2 flex gap-2 ">
       <Avatar className="h-16 w-16">
@@ -44,13 +68,12 @@ export function Post({
       </Avatar>
       <div className="grow ">
         <div className="flex gap-2 wrap items-center">
-          <span className="mr-2 font-semibold text-yellow-800">
-            {user.name}
-          </span>
-          {flairList}
+          <span className="font-semibold text-yellow-800">{user.name}</span>
+          {userTitle}
+          {tagDisplay}
         </div>
         <div className="py-1 text-left w-full">
-          <span>{message}</span>
+          <span>{parsedMessage}</span>
           <div className="inline-flex gap-2 float-end">
             {/* <Reaction icon={<span>💖</span>} count={hearts.size} /> */}
             {/* <Reaction icon={<span>🤝</span>} count={dittos.size} /> */}

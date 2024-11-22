@@ -15,7 +15,7 @@ function App() {
       <main className="grow p-8 pt-4">
         <SearchBar />
         <div className="flex wrap items-start gap-8 mt-4">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 grow">
             <CreatePost />
             <PostList list={posts} />
           </div>

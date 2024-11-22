@@ -90,4 +90,12 @@
   #description {
     @apply text-base;
   }
+
+  .highlight-tag {
+    @apply text-amber-600 font-semibold;
+  }
+
+  .tag {
+    @apply rounded-full px-1.5 py-0.5 bg-primary text-primary-foreground text-sm;
+  }
 }

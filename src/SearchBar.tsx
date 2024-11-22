@@ -51,9 +51,7 @@ export default function SearchBar({ searchList = posts }) {
       <PopoverContent
         onOpenAutoFocus={(e) => e.preventDefault()}
         className="w-[--radix-popover-trigger-width]"
-      >
-        {{ resultDisplay }}
-      </PopoverContent>
+      ></PopoverContent>
     </Popover>
   );
 }
