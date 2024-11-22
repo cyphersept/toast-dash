@@ -1,3 +1,5 @@
+import { createContext } from "react";
+
 function initEmptyArray() {
   const result: object[] = [];
   return result;
@@ -12,7 +14,7 @@ export const missions = [
 export const users = [
   {
     userId: 0,
-    name: "John Doe",
+    name: "Bob Buildington",
     flairs: [
       { group: 0, id: 0 },
       { group: 1, id: 0 },
@@ -22,7 +24,7 @@ export const users = [
   },
   {
     userId: 1,
-    name: "Jane Smith",
+    name: "Alice Lidell",
     flairs: [
       { group: 0, id: 1 },
       { group: 1, id: 1 },
@@ -50,8 +52,19 @@ export const users = [
     ],
     avatar: "https://i.pravatar.cc/150?img=60",
   },
+  {
+    userId: 4,
+    name: "Butterina Toastfeld",
+    flairs: [
+      { group: 0, id: 4 },
+      { group: 1, id: 4 },
+      { group: 2, id: 2 },
+    ],
+    avatar: "https://i.pravatar.cc/150?img=42",
+  },
 ];
 
+export const currentAccount = users[4];
 export const posts = [
   {
     postId: 0,
@@ -173,4 +186,20 @@ export const Updaters = {
   commentPost(index = 0, comment = { userId: 3, time: Date.now() }) {
     posts[index].comments.push(comment);
   },
+  createNewPost(message: string) {
+    const template = {
+      postId: posts.length,
+      userId: currentAccount.userId,
+      message: message,
+      cheers: new Set(),
+      comments: initEmptyArray(),
+    };
+
+    posts.push(template);
+    console.log("created new post with " + message);
+    console.log(template);
+    return template;
+  },
 };
+
+export const PostsContext = createContext(posts);

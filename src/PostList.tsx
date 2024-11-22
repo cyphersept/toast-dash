@@ -68,7 +68,7 @@ export function Post({
       </Avatar>
       <div className="grow ">
         <div className="flex gap-2 wrap items-center">
-          <span className="font-semibold text-yellow-800">{user.name}</span>
+          <span className="font-semibold nametag">{user.name}</span>
           {userTitle}
           {tagDisplay}
         </div>
@@ -110,9 +110,7 @@ export function MiniPost({ message = "", user = users[0] }) {
       </Avatar>
       <div className="grow ">
         <div className="flex gap-2 wrap items-center">
-          <span className="mr-2 font-semibold text-yellow-800">
-            {user.name}
-          </span>
+          <span className="mr-2 font-semibold nametag">{user.name}</span>
         </div>
         <div className="py-1 text-left w-full">{message}</div>
       </div>

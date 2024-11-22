@@ -32,7 +32,7 @@ export default function MissionList({ list = missions }) {
     ? "️‍🔥 You're on a roll!"
     : "Complete " + missionsLeft + " more missions to continue your streak!";
   return (
-    <Card className="rounded-3xl min-w-20">
+    <Card className="rounded-3xl min-w-24">
       <CardHeader>
         <CardTitle>Today's Missions</CardTitle>
         <CardDescription>

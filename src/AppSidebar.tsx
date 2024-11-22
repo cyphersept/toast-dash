@@ -68,7 +68,7 @@ export default function AppSidebar() {
     />
   ));
   return (
-    <Card className="flex flex-col h-full w-80">
+    <Card className="flex flex-col w-96  mt-4 mb-8 rounded-s-none ">
       <CardHeader className="flex-row gap-4 pl-8 text-lg border-b font-semibold">
         <CalendarCheck /> Placeholder App Name
       </CardHeader>

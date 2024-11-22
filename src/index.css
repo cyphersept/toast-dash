@@ -98,4 +98,8 @@
   .tag {
     @apply rounded-full px-1.5 py-0.5 bg-primary text-primary-foreground text-sm;
   }
+
+  .nametag {
+    @apply text-amber-800;
+  }
 }
