@@ -2,7 +2,7 @@ import { Avatar, AvatarImage } from "./components/ui/avatar";
 import { Card } from "./components/ui/card";
 import { MessageCircleMore } from "lucide-react";
 import { users, posts, Updaters } from "./values";
-import { createContext, useContext } from "react";
+//import { createContext, useContext } from "react";
 
 import { Flair, FlatFlair } from "./Flair";
 
@@ -25,11 +25,11 @@ export default function PostList({ list = posts }) {
 }
 
 export function Post({
-  postId,
+  postId = -1,
   message = "Error: Post message missing",
   user = users[0],
   cheers = new Set(),
-  comments,
+  comments = [{}],
 }) {
   const flairList = user.flairs.map((obj, index) =>
     index == 2 ? (

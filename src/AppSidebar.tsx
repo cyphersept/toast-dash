@@ -81,7 +81,7 @@ export default function AppSidebar() {
 }
 
 function SidebarItem({
-  item,
+  item = items[0],
   classes = "",
   isSelected = false,
   clickFunc = () => {},

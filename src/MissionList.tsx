@@ -9,7 +9,7 @@ import {
 import { CircleCheckBig, Circle } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { missions } from "./values";
-import { useState } from "react";
+// import { useState } from "react";
 
 export default function MissionList({ list = missions }) {
   const listMissions = list.map((el) => (

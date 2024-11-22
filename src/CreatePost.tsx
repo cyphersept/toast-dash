@@ -41,7 +41,7 @@ export default function CreatePost({ user = currentAccount }) {
           </div>
           <div className="flex items-center gap-4 ml-auto">
             <Button variant="outline" size="sm">
-              <ImageIcon className="w-4 h-4 mr-2" />
+              <ImageIcon classes="w-4 h-4 mr-2" />
               Upload Image
             </Button>
             <Button type="submit" onClick={makePost}>
@@ -67,10 +67,10 @@ export default function CreatePost({ user = currentAccount }) {
   );
 }
 
-function ImageIcon(props) {
+function ImageIcon({ classes = "" }) {
   return (
     <svg
-      {...props}
+      className={classes}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

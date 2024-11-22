@@ -1,8 +1,8 @@
-import { useFuzzySearchList, Highlight } from "@nozbe/microfuzz/react";
+//import { useFuzzySearchList, Highlight } from "@nozbe/microfuzz/react";
 import { Search } from "lucide-react";
 import { useState } from "react";
-import { MiniPost } from "./PostList";
-import { users, posts } from "./values";
+//import { MiniPost } from "./PostList";
+import { posts } from "./values";
 
 // https://www.npmjs.com/package/@nozbe/microfuzz
 import {
@@ -29,17 +29,17 @@ export default function SearchBar({ searchList = posts }) {
   //Render `filteredList`'s labels with matching characters highlighted
   const results = [...searchList];
   results.length = 10;
-  const resultDisplay = results.map((item) => (
-    <MiniPost
-      key={item.postId}
-      message={item.message}
-      user={users[item.userId]}
-    ></MiniPost>
-  ));
+  // const resultDisplay = results.map((item) => (
+  //   <MiniPost
+  //     key={item.postId}
+  //     message={item.message}
+  //     user={users[item.userId]}
+  //   ></MiniPost>
+  // ));
 
   return (
     <Popover>
-      <PopoverTrigger className="relative w-full">
+      <PopoverTrigger className={"relative w-full" + value}>
         <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
         <input
           type="text"

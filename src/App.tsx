@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
+// import { useState, useContext } from "react";
+// import PostList from "./PostList";
 
 import MissionList from "./MissionList";
-import PostList from "./PostList";
 import AppSidebar from "./AppSidebar";
 
-import { missions, PostsContext } from "./values";
+import { missions } from "./values";
 import SearchBar from "./SearchBar";
 import CreatePost from "./CreatePost";
 
