@@ -78,3 +78,21 @@ function Reaction({ icon = <span />, count = 0, clickFunc = () => {} }) {
     </button>
   );
 }
+
+export function MiniPost({ message = "", user = users[0] }) {
+  return (
+    <div className="p-1 flex gap-2 ">
+      <Avatar className="h-8 w-8">
+        <AvatarImage src={user.avatar} />
+      </Avatar>
+      <div className="grow ">
+        <div className="flex gap-2 wrap items-center">
+          <span className="mr-2 font-semibold text-yellow-800">
+            {user.name}
+          </span>
+        </div>
+        <div className="py-1 text-left w-full">{message}</div>
+      </div>
+    </div>
+  );
+}
